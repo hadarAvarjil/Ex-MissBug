@@ -1,4 +1,9 @@
+import fs from 'fs'
+import http from 'http'
+import https from 'https'
+
 export const utilService = {
+    readJsonFile,
     makeId,
     makeLorem,
     getRandomIntInclusive,
@@ -42,4 +47,10 @@ function loadFromStorage(keyDB) {
 function saveToStorage(keyDB, val) {
     const valStr = JSON.stringify(val)
     localStorage.setItem(keyDB, valStr)
+}
+
+function readJsonFile(path) {
+    const str = fs.readFileSync(path, 'utf8')
+    const json = JSON.parse(str)
+    return json
 }

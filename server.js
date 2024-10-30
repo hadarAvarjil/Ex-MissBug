@@ -1,5 +1,5 @@
 import express from 'express' 
-import { bugService } from './services/bug.service.js'
+import { bugService } from './miss-bug/services/bug.service.js'
 import cookieParser from 'cookie-parser'
 
 
